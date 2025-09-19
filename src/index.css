@@ -1,0 +1,39 @@
+@import "tailwindcss";
+:root {
+  --eco-green-500: #205521;
+  --eco-green-400: #4b822e;
+  --eco-green-300: #9dbc70;
+  --eco-brown-500: #8f552f;
+  --eco-pale-500: #e3c48d;
+  --eco-light: #f9f6f3;
+  --eco-mutated: #5e5e5e;
+  --eco-black: #121212;
+
+  --font-primary: "Manrope", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+}
+
+@theme inline {
+  --color-eco-green-500: var(--eco-green-500);
+  --color-eco-green-400: var(--eco-green-400);
+  --color-eco-green-300: var(--eco-green-300);
+  --color-eco-brown-500: var(--eco-brown-500);
+  --color-eco-pale-500: var(--eco-pale-500);
+  --color-eco-light: var(--eco-light);
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+}
+
+@layer base {
+  body {
+    @apply bg-eco-light text-[#121212] font-secondary;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary font-bold;
+  }
+}
