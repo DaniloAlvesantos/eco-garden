@@ -19,7 +19,7 @@ export const AsideComp = ({
 }: AsideProps) => {
   return (
     <aside
-      className={`md:hidden fixed top-0 left-0 h-[100dvh] w-64 bg-eco-light shadow-lg transform transition-transform duration-300 ease-in-out ${
+      className={`md:hidden fixed top-0 left-0 h-[100dvh] z-50 w-64 bg-eco-light shadow-lg transform transition-transform duration-300 ease-in-out ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } flex flex-col justify-between`}
       {...props}
