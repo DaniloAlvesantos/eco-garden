@@ -1,6 +1,6 @@
 | Centered |
 |:--------:|
-|![Gnome Logo](./src/assets/gnome-1.svg)|
+|![Gnome Logo](./public/gnome-1.svg)|
 
 # EcoGarden
 
