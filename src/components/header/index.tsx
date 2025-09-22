@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Aside } from "./aside";
 import { RiMenu3Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -49,10 +50,10 @@ const NavItems = () => {
           Recursos
         </li>
         <li className="cursor-pointer hover:text-eco-green-400 transition-colors duration-300">
-          Login
+          <Link to="/login">Login</Link>
         </li>
         <li className="py-2 px-4 bg-eco-green-500 rounded-full text-eco-light cursor-pointer transition-colors duration-300 hover:bg-eco-green-400">
-          Localizar
+          <Link to="/map">Localizar</Link>
         </li>
       </ul>
     </nav>

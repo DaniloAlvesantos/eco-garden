@@ -2,7 +2,7 @@ import Earth from "../assets/earth.svg";
 
 import { PiPlant } from "react-icons/pi";
 
-export const LandingPage = () => {
+export const HeroView = () => {
   return (
     <section
       id="hero"

@@ -20,15 +20,15 @@
   --color-eco-brown-500: var(--eco-brown-500);
   --color-eco-pale-500: var(--eco-pale-500);
   --color-eco-light: var(--eco-light);
-  --color-eco-mutated:var(--eco-mutated);
-  --color-eco-black:var(--eco-black);
+  --color-eco-mutated: var(--eco-mutated);
+  --color-eco-black: var(--eco-black);
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
 }
 
 @layer base {
   body {
-    @apply bg-eco-light text-[#121212] font-secondary;
+    @apply bg-eco-light text-[#121212] font-secondary antialiased scroll-smooth;
   }
   h1,
   h2,

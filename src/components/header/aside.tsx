@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 
 type NavigationItem = {
   title: string;
@@ -37,7 +38,7 @@ export const AsideComp = ({
             key={item.url}
             className="w-[95%] p-2 hover:bg-eco-mutated/10 text-center mx-auto rounded transition-colors duration-300"
           >
-            <a href={item.url}>{item.title}</a>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>
