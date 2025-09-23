@@ -1,0 +1,33 @@
+@use "variables" as vars;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: map-get(vars.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin responsive-text-clamp($min, $max, $vw) {
+  font-size: clamp(#{$min-size}, #{$vw}, #{$max-size});
+}
+
+@mixin transition-colors {
+  transition: color vars.$transition-normal, background-color $transition-normal;
+}
+
+@mixin transition-all {
+  transition: all vars.$transition-normal ease;
+}
+
+@mixin eco-bg($color) {
+  background-color: vars.$eco-#{$color};
+}
+
+@mixin eco-text($color) {
+  color: vars.$eco-#{$color};
+}

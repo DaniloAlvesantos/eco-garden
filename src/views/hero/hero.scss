@@ -1,0 +1,63 @@
+@use "../../scss/variables" as vars;
+@use "../../scss/mixins" as mixs;
+
+$hero-margin: 3rem;
+$earth-size: 20rem;
+$max-text-width: 32.25rem;
+
+@mixin responsive-heading {
+  font-size: clamp(2rem, 4.7vw, 4rem);
+  line-height: 1;
+}
+
+@mixin earth-styling {
+  width: $earth-size;
+  height: $earth-size;
+  object-fit: cover;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.hero-container {
+  margin-top: $hero-margin;
+  margin-bottom: $hero-margin;
+
+  h2 {
+    @include responsive-heading;
+  }
+
+  p {
+    max-width: $max-text-width;
+    line-height: 1.2;
+    font-size: small;
+
+    @include mixs.responsive(sm) {
+      font-size: 1rem;
+    }
+
+    @include mixs.responsive(xl) {
+      font-size: 1.1rem;
+    }
+  }
+
+  button {
+    width: 100%;
+    gap: 1rem;
+
+    @include mixs.responsive(md) {
+      width: auto;
+      padding: 0.5rem 2.5rem !important;
+    }
+
+    @include mixs.responsive(lg) {
+      padding: 0.5rem 20% !important;
+    }
+  }
+
+  @include mixs.responsive(md) {
+    gap: $hero-margin;
+  }
+}
+
+.earth {
+  @include earth-styling;
+}

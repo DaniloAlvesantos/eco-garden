@@ -1,6 +1,6 @@
 import Earth from "../../assets/earth.svg";
 import { PiPlant } from "react-icons/pi";
-import "./hero.css";
+import "./hero.scss";
 
 export const HeroView = () => {
   return (
@@ -8,7 +8,10 @@ export const HeroView = () => {
       id="hero"
       className="d-flex flex-column flex-sm-row mx-auto align-items-center justify-content-center hero-container"
     >
-      <div className="text-center text-sm-start" style={{ maxWidth: "32.25rem" }}>
+      <div
+        className="text-center text-sm-start"
+        style={{ maxWidth: "32.25rem" }}
+      >
         <h2 className="display-2 display-sm-1 mb-2 fw-bold">
           Cultive mais, <br /> desperdice menos
         </h2>
