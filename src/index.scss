@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:list";
 @use "./scss/variables" as vars;
 @use "./scss/mixins" as mixs;
 @import "bootstrap/dist/css/bootstrap.min.css";
@@ -72,9 +74,9 @@ $font-sizes: (
 );
 
 @mixin font-size($size) {
-  $values: map-get($font-sizes, $size);
-  font-size: nth($values, 1);
-  line-height: nth($values, 2);
+  $values: map.get($font-sizes, $size);
+  font-size: list.nth($values, 1);
+  line-height: list.nth($values, 2);
 }
 
 @mixin eco-bg-color($color) {

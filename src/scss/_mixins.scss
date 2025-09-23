@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "variables" as vars;
 
 @mixin flex-center {
@@ -7,7 +8,7 @@
 }
 
 @mixin responsive($breakpoint) {
-  @media (min-width: map-get(vars.$breakpoints, $breakpoint)) {
+  @media (min-width: map.get(vars.$breakpoints, $breakpoint)) {
     @content;
   }
 }
