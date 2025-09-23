@@ -9,20 +9,31 @@ export const Header = () => {
   const toggleAside = () => setIsOpen((prev) => !prev);
 
   return (
-    <header className="w-full px-2 flex items-center justify-between text-base">
-      <div className="flex items-center gap-2">
+    <header className="w-100 px-2 d-flex align-items-center justify-content-between">
+      <div className="d-flex align-items-center">
         <img
-          className="object-cover pointer-events-none max-h-16"
+          className="me-2"
+          style={{ maxHeight: "4rem", pointerEvents: "none" }}
           src="/gnome-1.svg"
           alt="gnome mascot"
         />
-        <span className="font-primary font-bold">EcoGarden</span>
+        <span className="font-primary fw-bold">EcoGarden</span>
       </div>
 
       <NavItems />
 
-      <span className="cursor-pointer hover:bg-eco-mutated/10 rounded-full p-2 transition-colors duration-300 md:hidden">
-        <RiMenu3Line onClick={toggleAside} className="size-6" />
+      <span
+        className="d-md-none p-2 rounded-circle transition-colors"
+        style={{ cursor: "pointer" }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.backgroundColor = "rgba(94, 94, 94, 0.1)")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.backgroundColor = "transparent")
+        }
+        onClick={toggleAside}
+      >
+        <RiMenu3Line size={24} />
       </span>
 
       <Aside
@@ -41,19 +52,38 @@ export const Header = () => {
 
 const NavItems = () => {
   return (
-    <nav className="hidden md:block">
-      <ul className="flex items-center gap-4 font-primary font-medium text-sm">
-        <li className="cursor-pointer hover:text-eco-green-400 transition-colors duration-300">
+    <nav className="d-none d-md-block">
+      <ul
+        className="d-flex align-items-center list-unstyled mb-0 font-primary fw-medium"
+        style={{ fontSize: "0.875rem", gap: "1rem" }}
+      >
+        <li
+          className="hover-eco-green transition-colors"
+          style={{ cursor: "pointer" }}
+        >
           Sobre
         </li>
-        <li className="cursor-pointer hover:text-eco-green-400 transition-colors duration-300">
+        <li
+          className="hover-eco-green transition-colors"
+          style={{ cursor: "pointer" }}
+        >
           Recursos
         </li>
-        <li className="cursor-pointer hover:text-eco-green-400 transition-colors duration-300">
-          <Link to="/login">Login</Link>
+        <li
+          className="hover-eco-green transition-colors"
+          style={{ cursor: "pointer" }}
+        >
+          <Link to="/login" className="text-decoration-none text-inherit">
+            Login
+          </Link>
         </li>
-        <li className="py-2 px-4 bg-eco-green-500 rounded-full text-eco-light cursor-pointer transition-colors duration-300 hover:bg-eco-green-400">
-          <Link to="/map">Localizar</Link>
+        <li>
+          <Link
+            to="/map"
+            className="btn bg-eco-green-500 text-eco-light rounded-pill px-4 py-2 text-decoration-none hover-eco-bg transition-colors"
+          >
+            Localizar
+          </Link>
         </li>
       </ul>
     </nav>

@@ -20,30 +20,39 @@ export const AsideComp = ({
 }: AsideProps) => {
   return (
     <aside
-      className={`md:hidden fixed top-0 left-0 h-[100dvh] z-50 w-64 bg-eco-light shadow-lg transform transition-transform duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      } flex flex-col justify-between`}
+      className={`mobile-sidebar bg-eco-light shadow-lg d-flex flex-column justify-content-between ${
+        isOpen ? "show" : ""
+      }`}
       {...props}
     >
       <img
         src="/gnome-1.svg"
         alt="gnome mascot"
         onClick={setIsOpen}
-        className="mx-auto mt-2 h-20"
+        className="mx-auto mt-2"
+        style={{ height: '5rem', cursor: 'pointer' }}
       />
 
-      <ul className="flex flex-col gap-2  items-center justify-center font-primary font-medium">
+      <ul className="d-flex flex-column list-unstyled font-primary fw-medium text-center">
         {navigation.map((item) => (
           <li
             key={item.url}
-            className="w-[95%] p-2 hover:bg-eco-mutated/10 text-center mx-auto rounded transition-colors duration-300"
+            className="mx-auto mb-2 p-2 rounded transition-colors"
+            style={{ 
+              width: '95%',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(94, 94, 94, 0.1)'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
           >
-            <Link to={item.url}>{item.title}</Link>
+            <Link to={item.url} className="text-decoration-none text-inherit">
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
 
-      <div className="min-h-12"></div>
+      <div style={{ minHeight: '3rem' }}></div>
     </aside>
   );
 };
