@@ -1,0 +1,27 @@
+.aside-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: clamp(16rem, 20rem, 30rem);
+  z-index: 1050;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  background: rgba(249, 246, 243, 0.5);
+  backdrop-filter: blur(4px);
+  
+  overflow-y: scroll;
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.aside-map-content {
+  position: relative;
+  .aside-map-image-container {
+    img {
+      width: 100%;
+    }
+  }
+}

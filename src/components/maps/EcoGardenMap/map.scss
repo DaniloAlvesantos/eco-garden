@@ -1,0 +1,8 @@
+@use "../../../scss/mixins" as mixs;
+
+.map {
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  inset: 0;
+}

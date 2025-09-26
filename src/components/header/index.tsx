@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Aside } from "./aside";
+import { AsideMenu } from "../asides/asideMenu/aside";
 import { RiMenu3Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import "./header.scss";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -12,8 +13,7 @@ export const Header = () => {
     <header className="w-100 px-2 d-flex align-items-center justify-content-between">
       <div className="d-flex align-items-center">
         <img
-          className="me-2"
-          style={{ maxHeight: "4rem", pointerEvents: "none" }}
+          className="me-2 img-fluid logo"
           src="/gnome-1.svg"
           alt="gnome mascot"
         />
@@ -36,7 +36,7 @@ export const Header = () => {
         <RiMenu3Line size={24} />
       </span>
 
-      <Aside
+      <AsideMenu
         isOpen={isOpen}
         navigation={[
           { title: "Sobre", url: "#about" },
